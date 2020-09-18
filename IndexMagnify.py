@@ -27,7 +27,7 @@ class socks:
          self.r="GET "+self.index+" HTTP/1.1\r\nHost: "+self.host+"\r\n\r\n"
          self.client.send(bytes(self.r,"utf-8"))
          if self.client.recv(1024).decode("utf-8").split("\r\n")[0]=="HTTP/1.1 200 OK":
-             return f"\033[1;31;40m [+] Found : {self.index} \033[0m 1;31;40m"
+             return f"\033[1;31;40m [+] Found : {self.index} \033[0m"
          else:
              return f"[+] Failed : {self.index}"
 requirements=__import__('sys').argv
